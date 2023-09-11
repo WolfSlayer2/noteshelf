@@ -1,0 +1,19 @@
+{
+  "name": "noteshelf-backend",
+  "version": "1.0.0",
+  "description": "NoteShelf - Your own shelf to store notes on the cloud",
+  "main": "index.js",
+  "scripts": {
+    "server" : "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Divyansh_Asthana",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
