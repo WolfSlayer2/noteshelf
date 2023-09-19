@@ -4,12 +4,13 @@ const router = express.Router()
 const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
+var fetchuser = require('../middleware/fetchuser');
 
 //secret code
 require('dotenv').config()
 const secret_key = process.env.JWT_SECRET
 
-//Create a User using: POST "/api/auth/createuser" No Login required
+//Route 1: Create a User using: POST "/api/auth/createuser" No Login required
 router.post('/createuser', [
   body('name', 'Enter a valid name').isLength({ min: 3 }),
   body('email', 'Enter a valid email').isEmail(),
@@ -51,7 +52,7 @@ router.post('/createuser', [
   }
 })
 
-//Authenticate a User using: POST "/api/auth/login" Login system
+//Route 2: Authenticate a User using: POST "/api/auth/login" Login system
 router.post('/login', [
   body('email', 'Check if your email is correct and type again').isEmail(),
   body('password', 'Cannot be blank').exists(),
@@ -75,7 +76,7 @@ router.post('/login', [
     if (!passCompare) {
       return res.status(400).json({ error: 'Please, login with correct Credentials' })
     }
-    
+
     //if login password is correct, send res to user
     const data = {
       user: {
@@ -91,4 +92,19 @@ router.post('/login', [
   }
 })
 
+//Route 3: Get Logged-in user details: POST "/api/auth/getuser" Login Required
+router.post('/getuser',fetchuser, async (req, res) => {
+
+  try {
+    userId = req.user.id;
+    const user = await User.findById(userId).select("-password")
+    res.send(user)
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send("Internal Server Error");
+  }
+
+})
+
 module.exports = router
+
