@@ -8,7 +8,7 @@ var fetchuser = require('../middleware/fetchuser');
 
 //secret code
 require('dotenv').config()
-const secret_key = process.env.JWT_SECRET
+const secret_key = `${process.env.JWT_SECRET}`
 
 //Route 1: Create a User using: POST "/api/auth/createuser" No Login required
 router.post('/createuser', [
