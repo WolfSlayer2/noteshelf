@@ -6,10 +6,10 @@ function Notes() {
     const context = useContext(noteContext)
     const {notes, setNotes} = context;
     return (
-        <div className='row my-3'>
+        <div className='row'>
             <h2>My Notes</h2>
             {notes.map((note) => {
-                return <Noteitem note={note}/>
+                return <Noteitem key={note._id} note={note}/>
             })}
 
         </div>

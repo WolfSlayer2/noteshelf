@@ -13,7 +13,25 @@ const NoteState = (props) => {
           "__v": 0
         },
         {
+          "_id": "650b48debca99267d9c548ee1",
+          "user": "65060b34d40b43c4397e10f0",
+          "title": "Design",
+          "description": "Ever tried UI/UX design?",
+          "tag": "fun",
+          "date": "2023-09-20T19:32:46.948Z",
+          "__v": 0
+        },
+        {
           "_id": "650b48debca99267d9c548ee",
+          "user": "65060b34d40b43c4397e10f0",
+          "title": "Design",
+          "description": "Ever tried UI/UX design?",
+          "tag": "fun",
+          "date": "2023-09-20T19:32:46.948Z",
+          "__v": 0
+        },
+        {
+          "_id": "650b48debca99267d9c548ee2",
           "user": "65060b34d40b43c4397e10f0",
           "title": "Design",
           "description": "Ever tried UI/UX design?",
