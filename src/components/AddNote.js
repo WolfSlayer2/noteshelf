@@ -30,7 +30,7 @@ function AddNote() {
                     <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                     <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
                 </div>
-                <button type="submit" className="btn btn-primary mb-3" onClick={handleNote}>Submit</button>
+                <button type="submit" className="btn btn-secondary mb-3" onClick={handleNote}>{`ADD >`}</button>
             </form>
         </div>
     )
