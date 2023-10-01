@@ -4,7 +4,7 @@ import Noteitem from './Noteitem'
 
 function Notes() {
     const context = useContext(noteContext)
-    const {notes, setNotes} = context;
+    const {notes, addNote} = context
     return (
         <div className='row'>
             <h2>My Notes</h2>
