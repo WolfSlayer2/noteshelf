@@ -5,7 +5,7 @@ export default function Navbar() {
     let location = useLocation();
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <nav className="navbar navbar-expand-lg navbar-dark">
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">
                     NoteShelf

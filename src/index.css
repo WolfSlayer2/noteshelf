@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fffcf2;
 }
 
 code {
@@ -14,4 +15,13 @@ code {
 
 i{
   cursor: pointer;
+}
+
+.navbar{
+  background-color: #403d39;
+}
+
+#add-btn{
+  background-color: #eb5f28ab;
+  border: 1px solid #eb5e28;
 }
