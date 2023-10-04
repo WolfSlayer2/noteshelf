@@ -5,19 +5,22 @@ import AddNote from './AddNote'
 
 function Notes() {
     const context = useContext(noteContext)
-    const { notes, fetchNote } = context
+    const { notes, fetchNote, editNote } = context
     useEffect(() => {
         fetchNote();
         // eslint-disable-next-line
     }, [])
+    const [note, setNote] = useState({id: "", etitle: "", edescription: "", etag: "" })
     const updateNote = (currnote) => {
         reference.current.click()
-        setNote({etitle: currnote.title, edescription: currnote.description, etag: currnote.tag})
+        setNote({id: currnote._id, etitle: currnote.title, edescription: currnote.description, etag: currnote.tag})
     }
     const reference = useRef(null)
-    const [note, setNote] = useState({ etitle: "", edescription: "", etag: "" })
+    const refClose = useRef(null)
     // eslint-disable-next-line
     const handleNote = (e) => {
+        editNote(note.id, note.etitle, note.edescription, note.etag)
+        refClose.current.click()
         //no page reload
         e.preventDefault();
     }
@@ -55,8 +58,8 @@ function Notes() {
                             </form>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary">Save changes</button>
+                            <button type="button" className="btn btn-secondary" ref={refClose} data-bs-dismiss="modal">Close</button>
+                            <button type="button" className="btn btn-primary" onClick={handleNote}>Save changes</button>
                         </div>
                     </div>
                 </div>

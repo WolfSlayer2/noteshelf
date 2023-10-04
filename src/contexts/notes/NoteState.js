@@ -71,15 +71,18 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({title, description, tag}), 
     });
-
-    for (let i = 0; i < notes.length; i++) {
-      const element = notes[i];
+    
+    let newNotes= JSON.parse(JSON.stringify(notes))
+    for (let i = 0; i < newNotes.length; i++) {
+      const element = newNotes[i];
       if (element._id === id) {
-        element.title = title;
-        element.description = description;
-        element.description = description;
+        newNotes[i].title = title;
+        newNotes[i].description = description;
+        newNotes[i].tag = tag;
+        break;
       }
     }
+    setNotes(newNotes)
   }
 
   return (
