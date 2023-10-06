@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import NoteContext from './noteContext';
 
 const NoteState = (props) => {
+  //API host
   const host = "http://localhost:5000"
   const notesMain = []
 
@@ -33,16 +34,8 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({title, description, tag}), 
     }); 
-
-    const note = {
-      "_id": "650b48debca998267d9c548ee1",
-      "user": "65060b34d40b43c4397e10f0",
-      "title": title,
-      "description": description,
-      "tag": tag,
-      "date": "2023-09-20T19:32:46.948Z",
-      "__v": 0
-    }
+    
+    const note = await response.json()
     setNotes(notes.concat(note))
   }
 
