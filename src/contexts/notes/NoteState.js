@@ -32,7 +32,7 @@ const NoteState = (props) => {
         "Content-Type": "application/json",
         "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUwNjBiMzRkNDBiNDNjNDM5N2UxMGYwIn0sImlhdCI6MTY5NTY3MDk0MX0.6hx0kTvsCnlVvVl20UaufX3LHQJTl5PMtGikCYLpwis"
       },
-      body: JSON.stringify({title, description, tag}), 
+      body: JSON.stringify({title, description, tag}) 
     }); 
     
     const note = await response.json()
@@ -62,7 +62,7 @@ const NoteState = (props) => {
         "Content-Type": "application/json",
         "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUwNjBiMzRkNDBiNDNjNDM5N2UxMGYwIn0sImlhdCI6MTY5NTA2MjczNn0.FY-GflrQOsBqBImVLbCjxrkH_ODhe98RNqPRdWNeHiw"
       },
-      body: JSON.stringify({title, description, tag}), 
+      body: JSON.stringify({title, description, tag})
     });
     
     let newNotes= JSON.parse(JSON.stringify(notes))

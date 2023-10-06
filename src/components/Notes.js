@@ -19,10 +19,10 @@ function Notes() {
     const refClose = useRef(null)
     
     const handleNote = (e) => {
-        editNote(note.id, note.etitle, note.edescription, note.etag)
-        refClose.current.click()
         //no page reload
         e.preventDefault();
+        editNote(note.id, note.etitle, note.edescription, note.etag)
+        refClose.current.click()
     }
     const onChange = (e) => {
         setNote({ ...note, [e.target.name]: e.target.value })
